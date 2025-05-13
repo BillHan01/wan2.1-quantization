@@ -1,5 +1,8 @@
 # Wan2.1-quantization
 
+**This project adapts the [ViDiT-Q](https://github.com/thu-nics/ViDiT-Q) post-training quantization (PTQ) methodology to the [Wan2.1](https://github.com/Wan-Video/Wan2.1) text-to-video model.**  
+It supports hardware-aware mixed-precision quantization and offers end-to-end tools for calibration, quantization, and quantized inference.  
+
 ## 🖥️ Runtime Environment
 
 This project was developed and tested on the following hardware and software environment:
