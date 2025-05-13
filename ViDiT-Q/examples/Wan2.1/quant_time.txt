@@ -1,0 +1,89 @@
+-----------------------------------------------
+fp
+-----------------------------------------------
+norm1 took 0.0003 seconds
+norm q 0.0023 seconds
+flash attention 0.0372 seconds
+self attn took 0.0438 seconds
+cross attn took 0.0050 seconds
+ffn took 0.0093 seconds
+[Time] block 26 took 0.0606 seconds
+
+norm1 took 0.0003 seconds
+norm q 0.0023 seconds
+flash attention 0.0372 seconds
+self attn took 0.0438 seconds
+cross attn took 0.0050 seconds
+ffn took 0.0093 seconds
+[Time] block 27 took 0.0606 seconds
+
+norm1 took 0.0003 seconds
+norm q 0.0023 seconds
+flash attention 0.0372 seconds
+self attn took 0.0437 seconds
+cross attn took 0.0050 seconds
+ffn took 0.0093 seconds
+[Time] block 28 took 0.0604 seconds
+
+norm1 took 0.0003 seconds
+norm q 0.0023 seconds
+flash attention 0.0372 seconds
+self attn took 0.0437 seconds
+cross attn took 0.0050 seconds
+ffn took 0.0093 seconds
+[Time] block 29 took 0.0604 seconds
+
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:04<00:00,  4.42s/it]
+model time: 4.425170077942312 secs.
+2/2 time: 19.168707624077797 secs.
+
+-----------------------------------------------
+quant
+-----------------------------------------------
+self.norm1(x, shift_msa, scale_msa, self.quant_params)   0.0003 seconds
+padding 0.0002 seconds
+norm q 0.0018 seconds
+flash attention 0.0330 seconds
+self.self_attn(sa_input, seq_lens, grid_sizes, freqs, e)   0.0430 seconds
+fused_kernels.gate_residual_fuse   0.0002 seconds
+[Time] Self-Attention block took 0.0440 seconds
+self.cross_attn(self.norm3(x), context, context_lens) 0.0497 seconds
+ffn took 0.0100 seconds
+[Time] block 26 took 0.0600 seconds
+
+self.norm1(x, shift_msa, scale_msa, self.quant_params)   0.0003 seconds
+padding 0.0002 seconds
+norm q 0.0018 seconds
+flash attention 0.0330 seconds
+self.self_attn(sa_input, seq_lens, grid_sizes, freqs, e)   0.0430 seconds
+fused_kernels.gate_residual_fuse   0.0002 seconds
+[Time] Self-Attention block took 0.0440 seconds
+self.cross_attn(self.norm3(x), context, context_lens) 0.0497 seconds
+ffn took 0.0100 seconds
+[Time] block 27 took 0.0600 seconds
+
+self.norm1(x, shift_msa, scale_msa, self.quant_params)   0.0003 seconds
+padding 0.0002 seconds
+norm q 0.0018 seconds
+flash attention 0.0330 seconds
+self.self_attn(sa_input, seq_lens, grid_sizes, freqs, e)   0.0430 seconds
+fused_kernels.gate_residual_fuse   0.0002 seconds
+[Time] Self-Attention block took 0.0440 seconds
+self.cross_attn(self.norm3(x), context, context_lens) 0.0497 seconds
+ffn took 0.0100 seconds
+[Time] block 28 took 0.0600 seconds
+
+self.norm1(x, shift_msa, scale_msa, self.quant_params)   0.0003 seconds
+padding 0.0002 seconds
+norm q 0.0018 seconds
+flash attention 0.0330 seconds
+self.self_attn(sa_input, seq_lens, grid_sizes, freqs, e)   0.0430 seconds
+fused_kernels.gate_residual_fuse   0.0002 seconds
+[Time] Self-Attention block took 0.0440 seconds
+self.cross_attn(self.norm3(x), context, context_lens) 0.0497 seconds
+ffn took 0.0100 seconds
+[Time] block 29 took 0.0600 seconds
+
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:04<00:00,  4.00s/it]
+model time: 4.004133575130254 secs.
+2/3 time: 17.39193480880931 secs.
