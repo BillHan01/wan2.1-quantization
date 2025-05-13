@@ -140,3 +140,12 @@ torchrun --nproc_per_node=8 quant_generate.py \
 > - Replace /path/to/... with your actual model and config paths.
 > - --dit_fsdp, --t5_fsdp, and --ulysses_size are required for large-scale multi-GPU inference.
 > - Use --sample_steps to control generation speed and quality trade-offs.
+
+## 🔗 Related Repositories
+> **Wan2.1 Original Repository:**
+> https://github.com/Wan-Video/Wan2.1
+> Official source code and pretrained checkpoints for the Wan2.1 Text-to-Video model.
+>
+> **ViDiT-Q Quantization Toolkit:**
+> https://github.com/thu-nics/ViDiT-Q
+> Post-training quantization framework for diffusion transformers, used as the backbone for this project’s quantization pipeline.
