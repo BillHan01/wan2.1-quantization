@@ -1,0 +1,8 @@
+# ninja log v5
+0	1971	1744903509496661927	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-39/csrc/qgemm/w4a4/atom.o	775cd625e3e0f6d9
+0	30584	1744903538094336181	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-39/csrc/qgemm/pybind.o	a8b0019951c87c3
+1	51288	1744903558797225916	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-39/csrc/qgemm/w4a8/w4a8_per_channel_gemm_cuda_qserve.o	2a22adbf675ee86e
+1	55789	1744903563298339617	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-39/csrc/qgemm/w8a8/w8a8_gemm_cuda_qserve.o	8d74cb8bb776ef43
+1	56718	1744903564225243390	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-39/csrc/qgemm/w8a8/w8a8_gemm_cuda.o	71cf15915b7f276
+4	29096	1744903593872486170	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-39/csrc/fused/pybind.o	8db52c6257a5cdcb
+4	47876	1744903612651037311	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-39/csrc/fused/fused.o	141e31908f0fec46

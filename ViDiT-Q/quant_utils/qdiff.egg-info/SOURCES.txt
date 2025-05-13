@@ -1,0 +1,5 @@
+setup.py
+qdiff.egg-info/PKG-INFO
+qdiff.egg-info/SOURCES.txt
+qdiff.egg-info/dependency_links.txt
+qdiff.egg-info/top_level.txt

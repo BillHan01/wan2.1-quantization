@@ -1,0 +1,33 @@
+ninja_required_version = 1.3
+cxx = /cv/hanjiarui/envs/q-wanx-tmp/bin/x86_64-conda-linux-gnu-c++
+nvcc = /cv/hanjiarui/envs/q-wanx-tmp/bin/nvcc
+
+cflags = -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /cv/hanjiarui/envs/q-wanx-tmp/include -I/cv/hanjiarui/envs/q-wanx-tmp/targets/x86_64-linux/include -L/cv/hanjiarui/envs/q-wanx-tmp/targets/x86_64-linux/lib -L/cv/hanjiarui/envs/q-wanx-tmp/targets/x86_64-linux/lib/stubs -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /cv/hanjiarui/envs/q-wanx-tmp/include -I/cv/hanjiarui/envs/q-wanx-tmp/targets/x86_64-linux/include -L/cv/hanjiarui/envs/q-wanx-tmp/targets/x86_64-linux/lib -L/cv/hanjiarui/envs/q-wanx-tmp/targets/x86_64-linux/lib/stubs -fPIC -I/cv/hanjiarui/envs/q-wanx-tmp/lib/python3.10/site-packages/torch/include -I/cv/hanjiarui/envs/q-wanx-tmp/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -I/cv/hanjiarui/envs/q-wanx-tmp/lib/python3.10/site-packages/torch/include/TH -I/cv/hanjiarui/envs/q-wanx-tmp/lib/python3.10/site-packages/torch/include/THC -I/cv/hanjiarui/envs/q-wanx-tmp/include -I/cv/hanjiarui/envs/q-wanx-tmp/include/python3.10 -c
+post_cflags = -g -O3 -fopenmp -lgomp -std=c++17 -DENABLE_BF16 -D_GLIBCXX_USE_CXX11_ABI=0 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=fused -D_GLIBCXX_USE_CXX11_ABI=0
+cuda_cflags = -I/cv/hanjiarui/envs/q-wanx-tmp/lib/python3.10/site-packages/torch/include -I/cv/hanjiarui/envs/q-wanx-tmp/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -I/cv/hanjiarui/envs/q-wanx-tmp/lib/python3.10/site-packages/torch/include/TH -I/cv/hanjiarui/envs/q-wanx-tmp/lib/python3.10/site-packages/torch/include/THC -I/cv/hanjiarui/envs/q-wanx-tmp/include -I/cv/hanjiarui/envs/q-wanx-tmp/include/python3.10 -c
+cuda_post_cflags = -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -O3 -std=c++17 -U__CUDA_NO_HALF_OPERATORS__ -U__CUDA_NO_HALF_CONVERSIONS__ --use_fast_math --threads=8 -Xptxas=-v -D_GLIBCXX_USE_CXX11_ABI=0 -gencode arch=compute_80,code=sm_80 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=fused -D_GLIBCXX_USE_CXX11_ABI=0 -ccbin /cv/hanjiarui/envs/q-wanx-tmp/bin/x86_64-conda-linux-gnu-cc
+cuda_dlink_post_cflags = 
+ldflags = 
+
+rule compile
+  command = $cxx -MMD -MF $out.d $cflags -c $in -o $out $post_cflags
+  depfile = $out.d
+  deps = gcc
+
+rule cuda_compile
+  depfile = $out.d
+  deps = gcc
+  command = $nvcc --generate-dependencies-with-compile --dependency-output $out.d $cuda_cflags -c $in -o $out $cuda_post_cflags
+
+
+
+
+
+build /cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/fused/fused.o: cuda_compile /cv/hanjiarui/code/ViDiT-Q/kernels/csrc/fused/fused.cu
+build /cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/fused/pybind.o: compile /cv/hanjiarui/code/ViDiT-Q/kernels/csrc/fused/pybind.cpp
+
+
+
+
+
+

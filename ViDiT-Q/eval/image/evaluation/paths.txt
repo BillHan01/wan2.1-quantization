@@ -1,0 +1,1 @@
+$YOUR_PATH/project/attn_quant/diffuser-dev/examples/cogvideo_attn/logs/calib_data/zhuhongyu_flux/Permute_QKsmooth4_PV4/generated_images_30

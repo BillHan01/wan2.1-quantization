@@ -1,0 +1,23 @@
+# ninja log v5
+0	1975	1745225555115711883	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/qgemm/w4a4/atom.o	63c9ccaf1efbce62
+0	28583	1745225581708702763	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/qgemm/pybind.o	b6c89e58fd8fa2f2
+0	52614	1745225605739609124	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/qgemm/w4a8/w4a8_per_channel_gemm_cuda_qserve.o	5dd3c031b751330e
+1	55354	1745225608438210923	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/qgemm/w8a8/w8a8_gemm_cuda_qserve.o	52d3518d14ecb179
+1	58276	1745225611400602321	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/qgemm/w8a8/w8a8_gemm_cuda.o	7843e650976c649f
+4	27181	1745225639113757897	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/fused/pybind.o	5d58800c8fdfe8b1
+4	51859	1745225663793570189	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/fused/fused.o	90e806f62d91aae2
+22	2073	1745229874493231845	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/qgemm/w4a4/atom.o	fc15b1f21a91dbdb
+22	27665	1745229900082645616	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/qgemm/pybind.o	58806f0fd46c48cc
+22	47935	1745229920350172925	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/qgemm/w4a8/w4a8_per_channel_gemm_cuda_qserve.o	ab1f03dfcab3a908
+23	51193	1745229923607325808	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/qgemm/w8a8/w8a8_gemm_cuda_qserve.o	577254ca7c54030f
+23	52921	1745229925336923810	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/qgemm/w8a8/w8a8_gemm_cuda.o	1784138b641add18
+20	26414	1745229952256770627	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/fused/pybind.o	2c147adb8534c3a5
+20	47840	1745229973682851645	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/fused/fused.o	9a7c9e17f66fdab5
+2306	33761	1745465824983351339	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/qgemm/pybind.o	87f0be89466bf0d4
+21	2738	1745485725875213269	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/qgemm/w4a4/atom.o	4726d9b6b21a3d95
+2109	34751	1745486057054909955	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/qgemm/pybind.o	ba0650a476f59222
+2109	51506	1745486073807631793	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/qgemm/w4a8/w4a8_per_channel_gemm_cuda_qserve.o	fce5eb18152a4e00
+2109	54125	1745486076428698973	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/qgemm/w8a8/w8a8_gemm_cuda_qserve.o	d2f44dba59fbc75c
+2109	55280	1745486077578773945	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/qgemm/w8a8/w8a8_gemm_cuda.o	8ddb1ddb30b6db4c
+15	31386	1745486109614439808	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/fused/pybind.o	996e798c36ee2f40
+15	50270	1745486128485886011	/cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-310/csrc/fused/fused.o	290b8c33b4b9f5f0

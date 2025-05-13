@@ -1,0 +1,12 @@
+model:
+    model_id: "opensora"
+    model_type: 'opensora'  # ['sd','sdxl']
+calib_data:
+weight:
+  n_bits: 8
+  group: 'tensor'
+  sym: False
+act:
+  n_bits: 8
+  group: 'tensor'
+  sym: False

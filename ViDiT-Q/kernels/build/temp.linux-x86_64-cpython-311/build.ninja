@@ -1,0 +1,33 @@
+ninja_required_version = 1.3
+cxx = c++
+nvcc = /usr/local/cuda/bin/nvcc
+
+cflags = -pthread -B /cv/hanjiarui/envs/qua2sedimo-clone/compiler_compat -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /cv/hanjiarui/envs/qua2sedimo-clone/include -fPIC -O2 -isystem /cv/hanjiarui/envs/qua2sedimo-clone/include -fPIC -I/cv/hanjiarui/envs/qua2sedimo-clone/lib/python3.11/site-packages/torch/include -I/cv/hanjiarui/envs/qua2sedimo-clone/lib/python3.11/site-packages/torch/include/torch/csrc/api/include -I/cv/hanjiarui/envs/qua2sedimo-clone/lib/python3.11/site-packages/torch/include/TH -I/cv/hanjiarui/envs/qua2sedimo-clone/lib/python3.11/site-packages/torch/include/THC -I/usr/local/cuda/include -I/cv/hanjiarui/envs/qua2sedimo-clone/include/python3.11 -c
+post_cflags = -g -O3 -fopenmp -lgomp -std=c++17 -DENABLE_BF16 -D_GLIBCXX_USE_CXX11_ABI=0 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=fused -D_GLIBCXX_USE_CXX11_ABI=0
+cuda_cflags = -I/cv/hanjiarui/envs/qua2sedimo-clone/lib/python3.11/site-packages/torch/include -I/cv/hanjiarui/envs/qua2sedimo-clone/lib/python3.11/site-packages/torch/include/torch/csrc/api/include -I/cv/hanjiarui/envs/qua2sedimo-clone/lib/python3.11/site-packages/torch/include/TH -I/cv/hanjiarui/envs/qua2sedimo-clone/lib/python3.11/site-packages/torch/include/THC -I/usr/local/cuda/include -I/cv/hanjiarui/envs/qua2sedimo-clone/include/python3.11 -c
+cuda_post_cflags = -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -O3 -std=c++17 -U__CUDA_NO_HALF_OPERATORS__ -U__CUDA_NO_HALF_CONVERSIONS__ --use_fast_math --threads=8 -Xptxas=-v -D_GLIBCXX_USE_CXX11_ABI=0 -gencode arch=compute_80,code=sm_80 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=fused -D_GLIBCXX_USE_CXX11_ABI=0
+cuda_dlink_post_cflags = 
+ldflags = 
+
+rule compile
+  command = $cxx -MMD -MF $out.d $cflags -c $in -o $out $post_cflags
+  depfile = $out.d
+  deps = gcc
+
+rule cuda_compile
+  depfile = $out.d
+  deps = gcc
+  command = $nvcc  $cuda_cflags -c $in -o $out $cuda_post_cflags
+
+
+
+
+
+build /cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-311/csrc/fused/fused.o: cuda_compile /cv/hanjiarui/code/ViDiT-Q/kernels/csrc/fused/fused.cu
+build /cv/hanjiarui/code/ViDiT-Q/kernels/build/temp.linux-x86_64-cpython-311/csrc/fused/pybind.o: compile /cv/hanjiarui/code/ViDiT-Q/kernels/csrc/fused/pybind.cpp
+
+
+
+
+
+
